@@ -1,0 +1,15 @@
+const cors = require('cors');
+
+// Middleware for CORS handling
+const corsMiddleware = (req, res, next) => {
+  // Allow requests from all origins (you can restrict to specific origins if needed)
+  const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+
+  cors(corsOptions)(req, res, next);
+};
+
+module.exports = corsMiddleware;
